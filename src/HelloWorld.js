@@ -3,7 +3,7 @@ import React from 'react';
 const HelloWorld = () => {
   
   function sayHello() {
-    alert('Hello, World!');
+    alert('Hello Praty!');
   }
   
   return (
