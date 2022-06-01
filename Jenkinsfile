@@ -10,7 +10,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat './jenkins/scripts/test.bat'
+                echo "Test is empty"
+                // bat './jenkins/scripts/test.bat'
             }
         }
         stage('Deliver') {
