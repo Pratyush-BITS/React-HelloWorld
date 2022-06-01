@@ -11,6 +11,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                bat './jenkins/scripts/deliver.bat'
             }
         }
     }
