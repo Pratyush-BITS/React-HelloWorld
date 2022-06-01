@@ -6,6 +6,9 @@ pipeline {
             steps {
                 bat 'npm install'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo %CD%
+                cd jenkins/scripts
+                echo %CD%
             }
         }
         // stage('Test') {
