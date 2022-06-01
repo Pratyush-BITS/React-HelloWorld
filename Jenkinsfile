@@ -6,12 +6,6 @@ pipeline {
             steps {
                 bat 'npm install'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo %CD%
-            }
-        }
-        stage("Env Variables") {
-            steps {
-                sh "printenv"
             }
         }
         // stage('Test') {
@@ -20,13 +14,13 @@ pipeline {
         //         bat './jenkins/scripts/test.sh'
         //     }
         // }
-        // stage('Deliver') {
-            // steps {
-                // echo %CD%
+        stage('Deliver') {
+            steps {
+                echo %CD%
                 // bash './jenkins/scripts/deliver.sh'
                 // input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 // bash './jenkins/scripts/kill.sh'
-            // }
-        // }
+            }
+        }
     }
 }
