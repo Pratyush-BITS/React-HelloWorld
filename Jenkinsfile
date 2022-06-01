@@ -7,7 +7,11 @@ pipeline {
                 bat 'npm install'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo %CD%
-                echo "${env}"
+            }
+        }
+        stage("Env Variables") {
+            steps {
+                sh "printenv"
             }
         }
         // stage('Test') {
