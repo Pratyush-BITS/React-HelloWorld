@@ -8,10 +8,16 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
+        stage('Test') {
+            steps {
+                bat './jenkins/scripts/test.bat'
+            }
+        }
         stage('Deliver') {
             steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 bat './jenkins/scripts/deliver.bat'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh './jenkins/scripts/kill.bat'
             }
         }
     }
