@@ -16,9 +16,9 @@ pipeline {
         stage('Deliver') {
             steps {
                 echo %CD%
-//                 bat './jenkins/scripts/deliver.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-//                 bat './jenkins/scripts/kill.sh'
+//                 bash './jenkins/scripts/deliver.sh'
+                // input message: 'Finished using the web site? (Click "Proceed" to continue)'
+//                 bash './jenkins/scripts/kill.sh'
             }
         }
     }
