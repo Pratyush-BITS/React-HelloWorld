@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                bat './jenkins/scripts/test.sh'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }
