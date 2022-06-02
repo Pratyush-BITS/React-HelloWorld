@@ -17,6 +17,8 @@ pipeline {
         stage('Deliver') {
             steps {
                 bat './jenkins/scripts/deliver.bat'
+                bat './jenkins/scripts/deliver2.bat'
+                echo $! > .pidfile
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 // bat './jenkins/scripts/kill.bat'
             }
