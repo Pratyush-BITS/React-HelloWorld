@@ -6,7 +6,7 @@ pipeline {
             steps {
                 bat 'npm install'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                bat 'npm build'
+                bat 'npm run build'
             }
         }
         stage('Test') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo ""
+                echo "Deployed"
                 // bat './jenkins/scripts/deliver2.bat'
                 // input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 // bat './jenkins/scripts/kill.bat'
