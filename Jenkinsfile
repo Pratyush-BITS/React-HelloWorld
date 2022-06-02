@@ -18,6 +18,7 @@ pipeline {
             steps {
                 bat 'npm run build'
                 bat 'npm install -g serve'
+                bat 'Set-ExecutionPolicy RemoteSigned'
                 bat 'serve -s build'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 // bat './jenkins/scripts/kill.bat'
