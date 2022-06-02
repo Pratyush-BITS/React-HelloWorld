@@ -17,9 +17,10 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                bat './jenkins/scripts/deliver2.bat'
+                echo 'Visit http://localhost:3000 to see your Node.js/React application in action.'
+                // npx serve -s build
+
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                // bat './jenkins/scripts/kill.bat'
             }
         }
     }
