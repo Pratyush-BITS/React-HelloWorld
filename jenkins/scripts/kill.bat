@@ -3,5 +3,5 @@ echo '(written to ".pidfile"), all of which were conducted when "deliver.bat"'
 echo 'was executed.'
 set -x
 @REM kill $(cat .pidfile)
-SET /P VALUE_FROM_FILE= < .pidfile
+SET /P VALUE_FROM_FILE= < $(cat .pidfile)
 taskkill /pid %VALUE_FROM_FILE% /f
