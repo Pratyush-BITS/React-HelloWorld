@@ -35,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npx": "^10.2.2",
+    "serve": "^13.0.2"
   }
 }
