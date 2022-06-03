@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Test is empty"
-                // bat './jenkins/scripts/test.bat'
+                // echo "Test is empty"
+                bat 'npm test'
             }
         }
         stage('Deploy') {
